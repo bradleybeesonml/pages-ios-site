@@ -34,11 +34,14 @@
 }
 
 .feature {
+    min-height: 100vh;
     display: flex;
-    padding: 100px 0;
+    align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    padding: 120px 0;
+    box-sizing: border-box;
 }
 
 .feature:last-child {
@@ -49,10 +52,11 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     position: relative;
+    gap: 60px;
 }
 
 .feature.left .featureContent {
@@ -65,15 +69,15 @@
 
 .featureText {
     flex: 1;
-    padding: 0 40px;
     position: relative;
     z-index: 2;
+    max-width: 500px;
 }
 
 .featureText h3 {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 600;
     color: {{ site.feature_title_color }};
 }
@@ -81,8 +85,12 @@
 .featureText p {
     color: {{ site.feature_text_color }};
     margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.fa-stack {
+    font-size: 24px;
 }
 
 .featureScreenshot {
@@ -92,54 +100,60 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    min-height: 700px;
 }
 
 .featureScreenshot .iphonePreview {
-    transform: scale(0.8);
+    transform: scale(1);
     margin: 0;
     position: relative;
     z-index: 1;
 }
 
-.feature.left .featureScreenshot {
-    margin-left: -40px;
-}
-
-.feature.right .featureScreenshot {
-    margin-right: -40px;
-}
-
 .iphoneScreen {
     max-width: 100%;
     height: auto;
+    border-radius: 40px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
     .feature {
-        padding: 60px 0;
+        min-height: auto;
+        padding: 80px 0;
     }
 
     .featureContent {
         flex-direction: column !important;
         text-align: center;
+        padding: 0 20px;
+        gap: 40px;
     }
 
     .featureText {
         padding: 0;
-        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+
+    .featureText h3 {
+        font-size: 32px;
+    }
+
+    .featureText p {
+        font-size: 16px;
     }
 
     .featureScreenshot {
+        min-height: auto;
         margin: 0 !important;
+    }
+
+    .featureScreenshot .iphonePreview {
+        transform: scale(0.8);
     }
 
     .fa-stack {
         margin: 0 auto;
-    }
-
-    .feature.left .featureScreenshot,
-    .feature.right .featureScreenshot {
-        margin: 0;
+        font-size: 20px;
     }
 }
 </style>
