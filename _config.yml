@@ -34,22 +34,27 @@ features                                  :
   - title                                 : AI Recipe Modification
     description                           : Instantly modify any recipe to match your dietary needs, health goals, or preferences using advanced AI.
     fontawesome_icon_name                 : magic
+    screenshot                            : assets/screenshot/ai_modification.png
     
   - title                                 : Smart Recipe Import
     description                           : Import recipes from anywhere on the web - websites, Instagram, TikTok, and more with just one tap.
     fontawesome_icon_name                 : file-import
+    screenshot                            : assets/screenshot/recipe_import.png
 
   - title                                 : Shopping Lists
     description                           : Automatically generate shopping lists from your recipes.
     fontawesome_icon_name                 : shopping-cart
+    screenshot                            : assets/screenshot/shopping_list.png
 
   - title                                 : Recipe Organization
     description                           : Easily save and organize your favorite recipes in one place.
     fontawesome_icon_name                 : book
+    screenshot                            : assets/screenshot/organization.png
 
-  - title                                 : Recipe Sharing
-    description                           : Share your favorite recipes with friends and family.
-    fontawesome_icon_name                 : share-alt
+  - title                                 : Macro Tracking & Boosting
+    description                           : View detailed macronutrient information for any recipe and use AI to boost protein, reduce carbs, or optimize for your goals.
+    fontawesome_icon_name                 : chart-bar
+    screenshot                            : assets/screenshot/macros.png
 
 # Theme Settings
 topbar_color                              : "#2D3047"

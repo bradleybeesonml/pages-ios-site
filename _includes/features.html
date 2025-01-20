@@ -1,26 +1,112 @@
 <div class="features">
-
     {% for feature in site.features %}
-
     {% if feature.title %}
-    <div class="feature">
-        <div>
-            <span class="fa-stack fa-1x">
-                <i class="iconBack fas fa-circle fa-stack-2x"></i>
-                <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
-            </span>
-        </div>
-        <div class="featureText">
-            <h3>
-                {{ feature.title }}
-            </h3>
-            <p>
-                {{ feature.description }}
-            </p>
+    <div class="feature {% cycle 'left', 'right' %}">
+        <div class="featureContent">
+            <div class="featureText">
+                <span class="fa-stack fa-1x">
+                    <i class="iconBack fas fa-circle fa-stack-2x"></i>
+                    <i class="iconTop fas fa-{{ feature.fontawesome_icon_name }} fa-stack-1x"></i>
+                </span>
+                <h3>
+                    {{ feature.title }}
+                </h3>
+                <p>
+                    {{ feature.description }}
+                </p>
+            </div>
+            <div class="featureScreenshot">
+                <div class="iphonePreview">
+                    <img class="iphoneScreen" src="{{ feature.screenshot | relative_url }}" alt="{{ feature.title }} screenshot">
+                </div>
+            </div>
         </div>
     </div>
     {% endif %}
-
     {% endfor %}
-
 </div>
+
+<style>
+.features {
+    margin-top: 40px;
+}
+
+.feature {
+    display: flex;
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feature:last-child {
+    border-bottom: none;
+}
+
+.featureContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feature.left .featureContent {
+    flex-direction: row;
+}
+
+.feature.right .featureContent {
+    flex-direction: row-reverse;
+}
+
+.featureText {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.featureText h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: {{ site.feature_title_color }};
+}
+
+.featureText p {
+    color: {{ site.feature_text_color }};
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.featureScreenshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureScreenshot .iphonePreview {
+    transform: scale(0.8);
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .featureContent {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .featureText {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .feature {
+        padding: 40px 0;
+    }
+
+    .fa-stack {
+        margin: 0 auto;
+    }
+}
+</style>
