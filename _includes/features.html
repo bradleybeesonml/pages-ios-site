@@ -16,9 +16,7 @@
                 </p>
             </div>
             <div class="featureScreenshot">
-                <div class="iphonePreview">
-                    <img class="iphoneScreen" src="{{ feature.screenshot | relative_url }}" alt="{{ feature.title }} screenshot">
-                </div>
+                <img class="screenshot" src="{{ feature.screenshot | relative_url }}" alt="{{ feature.title }} screenshot">
             </div>
         </div>
     </div>
@@ -56,7 +54,7 @@
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
-    gap: 60px;
+    gap: 80px;
 }
 
 .feature.left .featureContent {
@@ -100,20 +98,18 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    min-height: 700px;
 }
 
-.featureScreenshot .iphonePreview {
-    transform: scale(1);
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-.iphoneScreen {
-    max-width: 100%;
+.screenshot {
+    max-width: 300px;
     height: auto;
-    border-radius: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: translateY(-10px);
 }
 
 @media only screen and (max-width: 992px) {
@@ -142,13 +138,8 @@
         font-size: 16px;
     }
 
-    .featureScreenshot {
-        min-height: auto;
-        margin: 0 !important;
-    }
-
-    .featureScreenshot .iphonePreview {
-        transform: scale(0.8);
+    .screenshot {
+        max-width: 250px;
     }
 
     .fa-stack {
