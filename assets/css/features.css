@@ -1,0 +1,145 @@
+.features {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    padding: 120px 0;
+    box-sizing: border-box;
+}
+
+.feature.text-only {
+    min-height: auto;
+    padding: 60px 0;
+}
+
+.feature:last-child {
+    border-bottom: none;
+}
+
+.featureContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    gap: 80px;
+}
+
+.text-only .featureContent {
+    max-width: 800px;
+}
+
+.feature.left .featureContent {
+    flex-direction: row;
+}
+
+.feature.right .featureContent {
+    flex-direction: row-reverse;
+}
+
+.featureText {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.text-only .featureText {
+    max-width: 100%;
+    text-align: center;
+}
+
+.featureText h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.featureText p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.fa-stack {
+    font-size: 24px;
+}
+
+.text-only .fa-stack {
+    margin: 0 auto;
+}
+
+.featureScreenshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.screenshot {
+    width: 360px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 992px) {
+    .feature {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .feature.text-only {
+        padding: 40px 0;
+    }
+
+    .featureContent {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .featureText {
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .featureText h3 {
+        font-size: 32px;
+    }
+
+    .featureText p {
+        font-size: 16px;
+    }
+
+    .screenshot {
+        width: 270px;
+        height: 337.5px;
+    }
+
+    .fa-stack {
+        margin: 0 auto;
+        font-size: 20px;
+    }
+} 
