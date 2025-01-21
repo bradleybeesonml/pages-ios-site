@@ -72,7 +72,7 @@
 }
 
 .featureText p {
-    margin: 0;
+    margin: 0 0 30px 0;
     font-size: 18px;
     line-height: 1.6;
     opacity: 0.8;
@@ -87,11 +87,40 @@
     margin: 0 auto 20px auto;
 }
 
+.downloadButtonsContainer {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.text-only .downloadButtonsContainer {
+    justify-content: center;
+}
+
+.appStoreLink {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.appStoreLink:hover {
+    transform: scale(1.05);
+}
+
+.appStore {
+    height: 50px;
+    width: auto;
+}
+
 .featureScreenshot {
     flex: 0 0 360px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.screenshotLink {
+    display: block;
+    text-decoration: none;
 }
 
 .screenshot {
@@ -105,7 +134,7 @@
     background-color: #fff;
 }
 
-.screenshot:hover {
+.screenshotLink:hover .screenshot {
     transform: translateY(-10px);
 }
 
@@ -142,6 +171,10 @@
 
     .featureText p {
         font-size: 16px;
+    }
+
+    .downloadButtonsContainer {
+        justify-content: center;
     }
 
     .featureScreenshot {
