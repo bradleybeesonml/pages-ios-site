@@ -1,7 +1,7 @@
 <div class="features">
     {% for feature in site.features %}
     {% if feature.title %}
-    <div class="feature {% cycle 'left', 'right' %}">
+    <div class="feature {% cycle 'left', 'right' %} {% if feature.show_screenshot != true %}text-only{% endif %}">
         <div class="featureContent">
             <div class="featureText">
                 <span class="fa-stack fa-1x">
@@ -15,9 +15,11 @@
                     {{ feature.description }}
                 </p>
             </div>
+            {% if feature.show_screenshot %}
             <div class="featureScreenshot">
                 <img class="screenshot" src="{{ feature.screenshot | relative_url }}" alt="{{ feature.title }} screenshot">
             </div>
+            {% endif %}
         </div>
     </div>
     {% endif %}
@@ -42,6 +44,11 @@
     box-sizing: border-box;
 }
 
+.feature.text-only {
+    min-height: auto;
+    padding: 60px 0;
+}
+
 .feature:last-child {
     border-bottom: none;
 }
@@ -57,6 +64,10 @@
     gap: 80px;
 }
 
+.text-only .featureContent {
+    max-width: 800px;
+}
+
 .feature.left .featureContent {
     flex-direction: row;
 }
@@ -70,6 +81,11 @@
     position: relative;
     z-index: 2;
     max-width: 500px;
+}
+
+.text-only .featureText {
+    max-width: 100%;
+    text-align: center;
 }
 
 .featureText h3 {
@@ -91,6 +107,10 @@
     font-size: 24px;
 }
 
+.text-only .fa-stack {
+    margin: 0 auto;
+}
+
 .featureScreenshot {
     flex: 1;
     display: flex;
@@ -101,8 +121,9 @@
 }
 
 .screenshot {
-    max-width: 300px;
-    height: auto;
+    width: 360px;
+    height: 450px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -118,6 +139,10 @@
         padding: 80px 0;
     }
 
+    .feature.text-only {
+        padding: 40px 0;
+    }
+
     .featureContent {
         flex-direction: column !important;
         text-align: center;
@@ -128,6 +153,7 @@
     .featureText {
         padding: 0;
         margin: 0 auto;
+        text-align: center;
     }
 
     .featureText h3 {
@@ -139,7 +165,8 @@
     }
 
     .screenshot {
-        max-width: 250px;
+        width: 270px;
+        height: 337.5px;
     }
 
     .fa-stack {
