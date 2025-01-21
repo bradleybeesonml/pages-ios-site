@@ -106,9 +106,18 @@
     transform: scale(1.05);
 }
 
-.appStore {
+/* Default size for feature section buttons */
+.feature .appStore {
     height: 25px;
     width: auto;
+}
+
+/* Original size for header button */
+.headerContainer .appStore,
+.appInfo .appStore {
+    height: 50px;
+    width: auto;
+    margin-top: 12px;
 }
 
 .featureScreenshot {
