@@ -5,18 +5,14 @@
 }
 
 .feature {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
     padding: 120px 0;
     box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .feature.text-only {
-    min-height: auto;
     padding: 60px 0;
 }
 
@@ -90,12 +86,14 @@
 }
 
 .screenshot {
+    display: block;
     width: 360px;
     height: 450px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    background-color: #fff;
 }
 
 .screenshot:hover {
@@ -104,7 +102,6 @@
 
 @media only screen and (max-width: 992px) {
     .feature {
-        min-height: auto;
         padding: 80px 0;
     }
 

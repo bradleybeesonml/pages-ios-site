@@ -17,9 +17,13 @@
                     {{ feature.description }}
                 </p>
             </div>
-            {% if feature.show_screenshot %}
+            {% if feature.show_screenshot and feature.screenshot %}
             <div class="featureScreenshot">
-                <img class="screenshot" src="{{ feature.screenshot | relative_url }}" alt="{{ feature.title }} screenshot">
+                <img class="screenshot" 
+                     src="{{ feature.screenshot | relative_url }}" 
+                     alt="{{ feature.title }} screenshot"
+                     onerror="this.style.display='none'"
+                     loading="lazy">
             </div>
             {% endif %}
         </div>
