@@ -19,9 +19,15 @@
             </div>
             {% if feature.show_screenshot %}
             <div class="featureScreenshot">
+                <!-- Debug info -->
+                <div style="display: none;">
+                    Screenshot path: {{ feature.screenshot }}
+                    Full URL: {{ feature.screenshot | relative_url }}
+                </div>
                 <img class="screenshot" 
                      src="{{ feature.screenshot | relative_url }}" 
                      alt="{{ feature.title }} screenshot"
+                     onerror="console.log('Failed to load: {{ feature.screenshot }}')"
                      loading="lazy">
             </div>
             {% endif %}
