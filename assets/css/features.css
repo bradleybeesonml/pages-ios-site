@@ -108,7 +108,7 @@
 
 /* Default size for feature section buttons */
 .feature .appStore {
-    height: 25px;
+    height: 35px;
     width: auto;
 }
 
@@ -203,6 +203,6 @@
     }
 
     .appStore {
-        height: 25px;
+        height: 35px;
     }
 } 
